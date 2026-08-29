@@ -43,8 +43,26 @@ body {
 }
 
 input,
-textarea {
+textarea,
+select {
+    padding: var(--small-padding);
     font-family: "Roboto", sans-serif;
+    font-size: clamp(1rem, 2vh, 1.3rem);
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+textarea {
+    height: clamp(4rem, 14vh, 15rem);
+    resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #555;
+    box-shadow: 0 0 4px #555;
 }
 
 .app.todo-selected {
@@ -149,13 +167,25 @@ textarea {
     border-bottom: var(--common-border);
 }
 
-.todo-list .todo-title button {
+.todo-list .todo-title button,
+.todo-btns button {
     font-size: 1rem;
     padding-inline: 20px;
     padding-block: 15px;
     color: white;
     background-color: #0155da;
     border-radius: 10px;
+}
+
+.todo-btns .delete-btn {
+    border: 2px solid #e53935;
+    color: #e53935;
+    background: none;
+}
+
+.todo-btns .delete-btn:hover {
+    color: white;
+    background-color: #e53935;
 }
 
 .todo-list .todo-meta,
@@ -165,6 +195,11 @@ textarea {
     grid-template-columns: 10fr 4fr 3fr;
     border-bottom: var(--common-border);
     align-items: center;
+}
+
+.todo-items li:hover {
+    background-color: rgba(200, 200, 200, 0.1);
+    cursor: pointer;
 }
 
 .todo-items li label {
@@ -191,8 +226,9 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 5px 10px;
+    padding: 6px 16px;
     border-radius: 999px;
+    border: 1px solid currentColor;
 }
 
 .priority::before {
@@ -219,5 +255,50 @@ textarea {
 }
 
 .todo-detail {
-    background-color: khaki;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-left: var(--common-border);
+    padding: 20px;
+}
+
+.todo-detail .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-detail .detail-header h2 {
+    font-size: clamp(1rem, 3vh, 1.8rem);
+}
+
+.todo-detail .todo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 0;
+}
+
+.todo-form>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-form label {
+    font-size: clamp(1rem, 2vh, 1.3rem);
+}
+
+.todo-form {
+    font-weight: 600;
+}
+
+.todo-form .todo-btns {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.detail-header img {
+    width: 20px;
+    height: 20px;
 }
