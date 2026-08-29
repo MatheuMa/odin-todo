@@ -53,14 +53,118 @@
                 <button>+ New Todo</button>
             </div>
             <div class="todo-meta">
-                <p>Todo</p>
+                <div class="todo-all">
+                    <input type="checkbox" class="todo-checkbox" id="todo-checkbox" aria-label="Mark all as completed">
+                    <label for="todo-checkbox">Todo</label>
+                </div>
                 <p>Due Date</p>
                 <p>Priority</p>
+            </div>
+
+            <div class="todo-items">
+                <ul>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-1">
+                            <label for="todo-item-1">Review Calculus notes</label>
+                        </div>
+                        <p>May 20, 2025</p>
+                        <div>
+                            <span class="priority priority-high">High</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-2">
+                            <label for="todo-item-2">Complete Linear Algebra problem set </label>
+                        </div>
+                        <p>May 22, 2025</p>
+                        <div>
+                            <span class="priority priority-high">High</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-3">
+                            <label for="todo-item-3">Read Chapter 6: Probability</label>
+                        </div>
+                        <p>May 24, 2025</p>
+                        <div>
+                            <span class="priority priority-medium">Medium</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-4">
+                            <label for="todo-item-4">Watch Lecture 14: Hypothesis Testing</label>
+                        </div>
+                        <p>May 24, 2025</p>
+                        <div>
+                            <span class="priority priority-medium">Medium</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-5">
+                            <label for="todo-item-5">Practice past exam questions</label>
+                        </div>
+                        <p>May 26, 2025</p>
+                        <div>
+                            <span class="priority priority-low">Low</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-6">
+                            <label for="todo-item-6">Write summary of Chapter 5</label>
+                        </div>
+                        <p>May 27, 2025</p>
+                        <div>
+                            <span class="priority priority-low">Low</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="todo-checkbox" id="todo-item-7">
+                            <label for="todo-item-7">Prepare study plan for next week</label>
+                        </div>
+                        <p>May 28, 2025</p>
+                        <div>
+                            <span class="priority priority-low">Low</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </main>
 
         <aside class="todo-detail">
+            <div class="detail-header">
+                <h2>Todo Details</h2>
+                <button type="button" aria-label="Close todo details">
+                    <img src="assets/images/close.png" alt="close button">
+                </button>
+            </div>
 
+            <form class="todo-form">
+                <div>
+                    <label for="todo-title">Title</label>
+                    <input type="text" id="todo-title" name="todo-title">
+                </div>
+
+                <div>
+                    <label for="todo-description">Description</label>
+                    <textarea id="todo-description" name="todo-description"></textarea>
+                </div>
+
+                <div>
+                    <label for="todo-due">Due Date</label>
+                    <input type="date" id="todo-due" name="todo-due-date">
+                </div>
+
+                <div>
+
+                </div>
+            </form>
         </aside>
     </div>
 </body>

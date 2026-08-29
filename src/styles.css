@@ -27,6 +27,7 @@ ul {
     --common-title: clamp(0.8rem, 1.2vw, 1.4rem);
     --common-gap: clamp(10px, -.8vw, 40px);
     --delete-red: #cd2727;
+    --common-border: 1px solid #ddd;
 }
 
 html,
@@ -39,6 +40,11 @@ body {
     height: 100%;
     font-family: "Roboto", sans-serif;
     grid-template-columns: var(--sidebar-width) 1fr 0;
+}
+
+input,
+textarea {
+    font-family: "Roboto", sans-serif;
 }
 
 .app.todo-selected {
@@ -56,6 +62,7 @@ body {
 
 .side-bar {
     justify-content: space-between;
+    border-right: var(--common-border);
 }
 
 .side-bar .title img {
@@ -130,9 +137,8 @@ body {
 }
 
 .todo-list {
-    background-color: darkolivegreen;
     padding: var(--common-padding);
-    padding-inline: clamp(60px, 8vw, 300px);
+    padding-inline: clamp(60px, 5vw, 300px);
 }
 
 .todo-list .todo-title {
@@ -140,7 +146,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-block: var(--common-padding);
-    border-bottom: 1px solid #555;
+    border-bottom: var(--common-border);
 }
 
 .todo-list .todo-title button {
@@ -152,8 +158,64 @@ body {
     border-radius: 10px;
 }
 
-.todo-list .todo-meta {
+.todo-list .todo-meta,
+.todo-items li {
     display: grid;
+    padding: 25px;
+    grid-template-columns: 10fr 4fr 3fr;
+    border-bottom: var(--common-border);
+    align-items: center;
+}
+
+.todo-items li label {
+    padding-right: 10px;
+}
+
+.todo-list .todo-meta p,
+.todo-list .todo-meta label {
+    padding-left: 10px;
+    color: #666;
+}
+
+.todo-list label {
+    margin-left: 10px;
+}
+
+.todo-all {
+    display: flex;
+    align-items: center;
+}
+
+.priority {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.priority::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.priority-high {
+    color: #e53935;
+    background-color: #ffebee;
+}
+
+.priority-medium {
+    color: #f57c00;
+    background-color: #fff3e0;
+}
+
+.priority-low {
+    color: #2eae5e;
+    background-color: #e9f7ee;
 }
 
 .todo-detail {
