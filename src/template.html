@@ -49,8 +49,14 @@
 
         <main class="todo-list">
             <div class="todo-title">
-                <h1>Project 2</h1>
-                <button>+ New Todo</button>
+                <div>
+                    <h1>Project 2</h1>
+                    <!-- <input type="text" name="project-name" class="project-name"> -->
+                    <button>
+                        <img class="edit-project" src="assets/images/edit.png" alt="edit project name">
+                    </button>
+                </div>
+                <button class="add-todo">+ New Todo</button>
             </div>
             <div class="todo-meta">
                 <div class="todo-all">
@@ -145,6 +151,8 @@
                     </li>
                 </ul>
             </div>
+
+            <button class="delete-project">Delete Project</button>
         </main>
 
         <aside class="todo-detail">
