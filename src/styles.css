@@ -123,6 +123,11 @@ select:focus {
     padding: var(--common-padding);
 }
 
+.active {
+    border-left: 5px solid #333;
+    background-color: #ddd;
+}
+
 .side-bar .projects li button:hover,
 .side-bar .more-actions button:hover {
     background-color: #eee;
