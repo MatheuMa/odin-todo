@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    background: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+:root {
+    --sidebar-width: clamp(250px, 16vw, 350px);
+    --todo-detail-width: clamp(300px, 25vw, 500px);
+    --logo-size: clamp(50px, 4vw, 100px);
+    --common-padding: clamp(20px, 2vh, 40px);
+    --small-padding: clamp(10px, 1vh, 20px);
+    --common-title: clamp(0.8rem, 1.2vw, 1.4rem);
+    --common-gap: clamp(10px, -.8vw, 40px);
+    --delete-red: #cd2727;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.app {
+    display: grid;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    grid-template-columns: var(--sidebar-width) 1fr 0;
+}
+
+.app.todo-selected {
+    display: grid;
+    height: 100%;
+    grid-template-columns: var(--sidebar-width) 1fr var(--todo-detail-width);
+}
+
+.side-bar,
+.side-bar .projects,
+.side-bar .more-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar {
+    justify-content: space-between;
+}
+
+.side-bar .title img {
+    height: var(--logo-size);
+}
+
+.side-bar .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #333;
+    font-family: "Caesar Dressing", system-ui;
+    padding-block: var(--common-padding);
+    gap: var(--common-gap);
+    font-size: var(--common-title);
+}
+
+.side-bar .projects h2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    padding-inline: var(--common-padding);
+    padding-top: var(--common-padding);
+}
+
+.side-bar .projects li button {
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: var(--common-padding);
+}
+
+.side-bar .projects li button:hover,
+.side-bar .more-actions button:hover {
+    background-color: #eee;
+}
+
+.new-project:hover {
+    border: 2px dashed #333;
+    background-color: #ddd;
+}
+
+.side-bar .more-actions button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    text-align: left;
+    width: 100%;
+    font-size: 1rem;
+    padding: var(--common-padding);
+}
+
+.side-bar .more-actions img {
+    height: 1rem;
+}
+
+.new-proj-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.new-project {
+    width: 60%;
+    color: #333;
+    border: 1px dashed #333;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: var(--common-padding);
+}
+
+.todo-list {
+    background-color: darkolivegreen;
+    padding: var(--common-padding);
+    padding-inline: clamp(60px, 8vw, 300px);
+}
+
+.todo-list .todo-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--common-padding);
+    border-bottom: 1px solid #555;
+}
+
+.todo-list .todo-title button {
+    font-size: 1rem;
+    padding-inline: 20px;
+    padding-block: 15px;
+    color: white;
+    background-color: #0155da;
+    border-radius: 10px;
+}
+
+.todo-list .todo-meta {
+    display: grid;
+}
+
+.todo-detail {
+    background-color: khaki;
+}
