@@ -19,7 +19,7 @@ ul {
 }
 
 :root {
-    --sidebar-width: clamp(250px, 16vw, 350px);
+    --sidebar-width: clamp(250px, 18vw, 350px);
     --todo-detail-width: clamp(300px, 25vw, 500px);
     --logo-size: clamp(50px, 4vw, 100px);
     --common-padding: clamp(20px, 2vh, 40px);
@@ -37,9 +37,17 @@ body {
 
 .app {
     display: grid;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     font-family: "Roboto", sans-serif;
     grid-template-columns: var(--sidebar-width) 1fr 0;
+    overflow: hidden;
+}
+
+.side-bar,
+.todo-list,
+.todo-detail {
+    overflow-y: auto;
 }
 
 input,
