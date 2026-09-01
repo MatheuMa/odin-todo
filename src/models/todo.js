@@ -1,5 +1,11 @@
 export default class Todo {
-  constructor(title, description = "", dueDate, priority, notes = "") {
+  constructor({
+    title,
+    description = "",
+    dueDate,
+    priority,
+    notes = "",
+  }) {
     this.id = crypto.randomUUID();
     this.title = title;
     this.description = description;
@@ -9,8 +15,20 @@ export default class Todo {
     this.completed = false;
   }
 
-  updateDetails(changedDetails) {
-    Object.assign(this, changedDetails)
+  get todoDetails() {
+    return {
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      dueDate: this.dueDate,
+      priority: this.priority,
+      notes: this.notes,
+      completed: this.completed,
+    };
+  }
+
+  updateDetails(changes) {
+    Object.assign(this, changes);
   }
 
   toggleComplete() {
