@@ -167,6 +167,11 @@ select:focus {
     padding: var(--common-padding);
 }
 
+.no-project {
+    text-align: center;
+    margin-top: 40vh;
+}
+
 .todo-list {
     display: flex;
     flex-direction: column;
@@ -246,8 +251,9 @@ select:focus {
     padding-right: 10px;
 }
 
-.todo-list .todo-meta p,
+.todo-list .todo-meta button,
 .todo-list .todo-meta label {
+    font-size: 1rem;
     padding-left: 10px;
     color: #666;
 }

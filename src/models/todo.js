@@ -2,7 +2,7 @@ export default class Todo {
   constructor({
     title,
     description = "",
-    dueDate,
+    dueDate = "",
     priority,
     notes = "",
   }) {

@@ -9,10 +9,18 @@ export default class Project {
     this.todos.push(todo);
   }
 
+  getTodos() {
+    return this.todos;
+  }
+
   removeTodo(id) {
     this.todos = this.todos.filter((todo) => {
       return todo.id !== id
     })
+  }
+
+  findTodo(id) {
+    return this.todos.find(id);
   }
 
   rename(newTitle) {
