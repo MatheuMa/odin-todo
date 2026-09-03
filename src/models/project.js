@@ -1,7 +1,7 @@
 export default class Project {
   constructor(title) {
     this.id = crypto.randomUUID();
-    this.title = title
+    this.title = title;
     this.todos = [];
   }
 
@@ -14,13 +14,11 @@ export default class Project {
   }
 
   removeTodo(id) {
-    this.todos = this.todos.filter((todo) => {
-      return todo.id !== id
-    })
+    this.todos = this.todos.filter((todo) => todo.id !== id);
   }
 
   findTodo(id) {
-    return this.todos.find(id);
+    return this.todos.find((todo) => todo.id === id);
   }
 
   rename(newTitle) {

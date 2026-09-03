@@ -9,7 +9,8 @@ function initialize() {
 }
 
 function selectProject(id) {
-  selectedProject = projects.find(project => (project.id === id));
+  selectedProject = projects.find((project) => project.id === id) ?? null;
+  selectedTodo = null;
 }
 
 function getSelectedProject() {
@@ -22,8 +23,12 @@ function getProjects() {
 }
 
 function removeProject(id) {
-  projects = projects.filter((todo) => { return todo.id !== id });
-  return [...projects];
+  projects = projects.filter((project) => project.id !== id);
+
+  if (selectedProject?.id === id) {
+    selectedProject = null;
+    selectedTodo = null;
+  }
 }
 
 function addProject(project) {
@@ -31,11 +36,31 @@ function addProject(project) {
 }
 
 function selectTodo(selectedProject, id) {
-  selectedTodo = selectedProject.findTodo(id);
+  selectedTodo = selectedProject?.findTodo(id) ?? null;
 }
 
 function getSelectedTodo() {
   return selectedTodo;
 }
 
-export { initialize, getSelectedProject, selectProject, getProjects, removeProject, addProject }
+function clearSelectedProject() {
+  selectedProject = null;
+  selectedTodo = null;
+}
+
+function clearSelectedTodo() {
+  selectedTodo = null;
+}
+
+export {
+  initialize,
+  getSelectedProject,
+  selectProject,
+  selectTodo,
+  getSelectedTodo,
+  getProjects,
+  removeProject,
+  addProject,
+  clearSelectedProject,
+  clearSelectedTodo,
+};

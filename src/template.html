@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="app todo-selected">
+    <div class="app">
         <aside class="side-bar">
             <div>
                 <div class="title">
@@ -41,50 +41,6 @@
         </main>
 
         <aside class="todo-detail">
-            <div class="detail-header">
-                <h2>Todo Details</h2>
-                <button type="button" aria-label="Close todo details">
-                    <img src="assets/images/close.png" alt="close button">
-                </button>
-            </div>
-
-            <form class="todo-form">
-                <div>
-                    <label for="todo-title">Title</label>
-                    <input type="text" id="todo-title" name="todo-title" required>
-                </div>
-
-                <div>
-                    <label for="todo-description">Description</label>
-                    <textarea id="todo-description" name="todo-description"></textarea>
-                </div>
-
-                <div>
-                    <label for="todo-due">Due Date</label>
-                    <input type="date" id="todo-due" name="todo-due-date" required>
-                </div>
-
-                <div>
-                    <label for="todo-priority">Priority</label>
-                    <select name="todo-priority" id="todo-priority" required>
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="todo-notes">Notes</label>
-                    <textarea name="todo-notes" id="todo-notes"></textarea>
-                </div>
-
-                <div class="todo-btns">
-                    <button type="submit">Save Changes</button>
-                    <button type="button" class="delete-btn">
-                        <span>Delete</span>
-                    </button>
-                </div>
-            </form>
         </aside>
     </div>
 </body>
