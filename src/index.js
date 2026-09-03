@@ -96,7 +96,7 @@ todoList.addEventListener("click", (event) => {
 });
 
 // Events for Close and Delete buttons in Todo Details
-todoDetail.addEventListener("click", (event) => {
+todoDetail.addEventListener("change", (event) => {
   const button = event.target.closest("button[data-action]");
 
   if (!button) return;
