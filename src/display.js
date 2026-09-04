@@ -39,6 +39,8 @@ function renderProject(project) {
   const projectHeader = document.createElement("h1");
   projectHeader.textContent = project.title;
   const editBtn = document.createElement("button");
+  editBtn.classList.add("edit-project-button");
+  editBtn.dataset.action = "rename-project";
   const editBtnImg = document.createElement("img");
   editBtnImg.classList.add("edit-project");
   editBtnImg.src = editIcon;

@@ -19,6 +19,10 @@ const projectsList = document.querySelector(".projects");
 const todoList = document.querySelector(".todo-list");
 const todoDetail = document.querySelector(".todo-detail");
 
+const editProjectDialog = document.querySelector(".edit-project-name");
+const renameProjectForm = document.querySelector(".rename-project-form");
+const renameInput = document.querySelector(".rename-input");
+
 // Event for + New Project
 newProjectButton.addEventListener("click", () => {
   addProject(new Project("New Project"));
@@ -60,7 +64,33 @@ todoList.addEventListener("click", (event) => {
     application.classList.remove("todo-selected");
     renderProjects(getProjects(), getSelectedProject());
     renderProject(getSelectedProject());
+  } else if (action === "rename-project") {
+    if (!selectedProject) return;
+
+    renameInput.value = selectedProject.title;
+    editProjectDialog.showModal();
   }
+});
+
+renameProjectForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const selectedProject = getSelectedProject();
+  const newTitle = renameInput.value.trim();
+
+  if (!selectedProject || !newTitle) return;
+
+  selectedProject.rename(newTitle);
+  editProjectDialog.close();
+
+  renderProjects(getProjects(), selectedProject);
+  renderProject(selectedProject);
+});
+
+const cancelRenameButton = editProjectDialog.querySelector(".cancel-rename");
+
+cancelRenameButton.addEventListener("click", () => {
+  editProjectDialog.close();
 });
 
 // Event for toggling a Todo's completed state

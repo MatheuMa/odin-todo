@@ -43,6 +43,28 @@
         <aside class="todo-detail">
         </aside>
     </div>
+
+    <dialog class="edit-project-name">
+        <form class="rename-project-form">
+            <div>
+                <h3 class="rename-title" for="rename-input">
+                    New project name:
+                </h3>
+
+                <input class="rename-input" id="rename-input" name="projectTitle" type="text" required>
+            </div>
+
+            <div class="rename-buttons">
+                <button class="save-name" type="submit">
+                    Save
+                </button>
+
+                <button class="cancel-rename" type="button" data-action="cancel-rename">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 </html>

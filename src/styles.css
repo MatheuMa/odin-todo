@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 
-button {
+button,
+form {
     border: none;
     outline: none;
     font-family: "Roboto", sans-serif;
@@ -186,6 +187,37 @@ select:focus {
     padding-inline: clamp(60px, 5vw, 300px);
 }
 
+.rename-title {
+    margin-bottom: 20px;
+    font-size: clamp(1.2rem, 2.8vh, 1.5rem);
+}
+
+.rename-input {
+    width: clamp(200px, 25vw, 300px);
+}
+
+.rename-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-project-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+
+    transform: translate(-50%, -50%);
+}
+
+.editProjectName::backdrop {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
 .todo-list .todo-title {
     display: flex;
     align-items: center;
@@ -214,7 +246,9 @@ select:focus {
 
 .todo-list .todo-title .add-todo,
 .todo-btns button,
-.todo-list .delete-project {
+.rename-buttons .save-name,
+.todo-list .delete-project,
+.rename-buttons .cancel-rename {
     font-size: 1rem;
     padding-inline: 20px;
     padding-block: 15px;
@@ -228,14 +262,16 @@ select:focus {
 }
 
 .todo-btns .delete-btn,
-.todo-list .delete-project {
+.todo-list .delete-project,
+.rename-buttons .cancel-rename {
     border: 2px solid #e53935;
     color: #e53935;
     background: none;
 }
 
 .todo-btns .delete-btn:hover,
-.todo-list .delete-project:hover {
+.todo-list .delete-project:hover,
+.rename-buttons .cancel-rename:hover {
     color: white;
     background-color: #e53935;
 }
