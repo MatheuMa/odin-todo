@@ -34,4 +34,19 @@ export default class Todo {
   toggleComplete() {
     this.completed = !this.completed;
   }
+
+  static fromJSON(data) {
+    const todo = new Todo({
+      title: data.title,
+      description: data.description,
+      dueDate: data.dueDate,
+      priority: data.priority,
+      notes: data.notes
+    });
+
+    todo.id = data.id;
+    todo.completed = data.completed;
+
+    return todo;
+  }
 }

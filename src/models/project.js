@@ -1,3 +1,5 @@
+import Todo from "./todo.js";
+
 const priorityRule = ["high", "medium", "low"];
 
 export default class Project {
@@ -54,6 +56,17 @@ export default class Project {
     return this.todos.sort((a, b) => {
       return compareDates(a, b) * this.dueDateSortFlag;
     });
+  }
+
+  static fromJSON(data) {
+    const project = new Project(data.title);
+
+    project.id = data.id;
+    project.todos = data.todos.map((todoData) => {
+      return Todo.fromJSON(todoData);
+    });
+
+    return project;
   }
 }
 

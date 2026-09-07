@@ -10,8 +10,10 @@ import {
   selectTodo,
   getSelectedTodo,
   clearSelectedTodo,
+  initialize,
 } from "./app.js";
 import { renderProjects, renderProject, renderTodo } from "./display.js";
+import { saveProjectsToLocal } from "./storage.js";
 
 const application = document.querySelector(".app");
 const newProjectButton = document.querySelector(".new-project");
@@ -27,6 +29,7 @@ const renameInput = document.querySelector(".rename-input");
 newProjectButton.addEventListener("click", () => {
   addProject(new Project("New Project"));
   renderProjects(getProjects(), getSelectedProject());
+  saveProjectsToLocal(getProjects());
 });
 
 // Event for selecting a Project
@@ -78,6 +81,8 @@ todoList.addEventListener("click", (event) => {
     selectedProject.toggleDueDateFlag();
     renderProject(selectedProject);
   }
+
+  saveProjectsToLocal(getProjects());
 });
 
 renameProjectForm.addEventListener("submit", (event) => {
@@ -93,6 +98,7 @@ renameProjectForm.addEventListener("submit", (event) => {
 
   renderProjects(getProjects(), selectedProject);
   renderProject(selectedProject);
+  saveProjectsToLocal(getProjects());
 });
 
 const cancelRenameButton = editProjectDialog.querySelector(".cancel-rename");
@@ -118,6 +124,7 @@ todoList.addEventListener("change", (event) => {
 
   todo.toggleComplete();
   renderProject(currentProject);
+  saveProjectsToLocal(getProjects());
 });
 
 // Event for selecting a Todo
@@ -154,6 +161,7 @@ todoDetail.addEventListener("click", (event) => {
     clearSelectedTodo();
     application.classList.remove("todo-selected");
     renderProject(currentProject);
+    saveProjectsToLocal(getProjects());
   }
 });
 
@@ -180,7 +188,9 @@ todoDetail.addEventListener("submit", (event) => {
 
   renderProject(currentProject);
   renderTodo(currentTodo);
+  saveProjectsToLocal(getProjects());
 });
 
+initialize();
 renderProjects(getProjects(), getSelectedProject());
 renderProject(getSelectedProject());
