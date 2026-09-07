@@ -69,6 +69,14 @@ todoList.addEventListener("click", (event) => {
 
     renameInput.value = selectedProject.title;
     editProjectDialog.showModal();
+  } else if (action === "sort-by-priority") {
+    selectedProject.sortByPriority();
+    selectedProject.togglePriorityFlag();
+    renderProject(selectedProject);
+  } else if (action === "sort-by-due-date") {
+    selectedProject.sortByDueDate();
+    selectedProject.toggleDueDateFlag();
+    renderProject(selectedProject);
   }
 });
 
@@ -94,7 +102,7 @@ cancelRenameButton.addEventListener("click", () => {
 });
 
 // Event for toggling a Todo's completed state
-todoList.addEventListener("click", (event) => {
+todoList.addEventListener("change", (event) => {
   const checkbox = event.target.closest(".todo-checkbox");
   const currentProject = getSelectedProject();
 
@@ -126,7 +134,7 @@ todoList.addEventListener("click", (event) => {
 });
 
 // Events for Close and Delete buttons in Todo Details
-todoDetail.addEventListener("change", (event) => {
+todoDetail.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-action]");
 
   if (!button) return;

@@ -1,6 +1,10 @@
+const priorityRule = ["high", "medium", "low"];
+
 export default class Project {
   constructor(title) {
     this.id = crypto.randomUUID();
+    this.prioritySortFlag = 1;
+    this.dueDateSortFlag = 1;
     this.title = title;
     this.todos = [];
   }
@@ -23,5 +27,47 @@ export default class Project {
 
   rename(newTitle) {
     this.title = newTitle;
+  }
+
+  togglePriorityFlag() {
+    this.prioritySortFlag = -this.prioritySortFlag;
+  }
+
+  toggleDueDateFlag() {
+    this.dueDateSortFlag = -this.dueDateSortFlag;
+  }
+
+  sortByPriority() {
+    this.todos.sort((a, b) => {
+      const priorityA = priorityRule.indexOf(a.priority);
+      const priorityB = priorityRule.indexOf(b.priority);
+
+      if (priorityA === priorityB) {
+        return compareDates(a, b);
+      } else {
+        return (priorityA - priorityB) * this.prioritySortFlag;
+      }
+    });
+  }
+
+  sortByDueDate() {
+    return this.todos.sort((a, b) => {
+      return compareDates(a, b) * this.dueDateSortFlag;
+    });
+  }
+}
+
+function compareDates(a, b) {
+  if (!a.dueDate && !b.dueDate) {
+    return a.title.localeCompare(b.title);
+  }
+
+  if (!a.dueDate) return 1;
+  if (!b.dueDate) return -1;
+
+  if (a.dueDate === b.dueDate) {
+    return a.title.localeCompare(b.title);
+  } else {
+    return (a.dueDate.localeCompare(b.dueDate));
   }
 }

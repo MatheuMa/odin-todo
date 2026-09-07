@@ -1,5 +1,6 @@
 import editIcon from "./assets/images/edit.png";
 import closeIcon from "./assets/images/close.png";
+import sortIcon from "./assets/images/sort.png";
 
 const projectList = document.querySelector(".projects ul");
 const todoListMain = document.querySelector(".todo-list");
@@ -60,13 +61,27 @@ function renderProject(project) {
   todoAllLabel.textContent = "Todo";
   todoAll.append(todoAllLabel);
 
+  const dueDateDiv = document.createElement("div");
+  dueDateDiv.classList.add("sort-div");
   const dueDateSort = document.createElement("button");
   dueDateSort.textContent = "Due Date";
-  dueDateSort.classList.add("sort-due-date");
+  dueDateSort.dataset.action = "sort-by-due-date";
+  const dueDateSortIcon = document.createElement("img");
+  dueDateSortIcon.src = sortIcon;
+  dueDateSortIcon.classList.add("sort-icon");
+  dueDateDiv.append(dueDateSort, dueDateSortIcon);
+
+  const priorityDiv = document.createElement("div");
+  priorityDiv.classList.add("sort-div");
   const prioritySort = document.createElement("button");
   prioritySort.textContent = "Priority";
-  prioritySort.classList.add("sort-priority");
-  todoMeta.append(todoAll, dueDateSort, prioritySort);
+  prioritySort.dataset.action = "sort-by-priority";
+  const prioritySortIcon = document.createElement("img");
+  prioritySortIcon.src = sortIcon;
+  prioritySortIcon.classList.add("sort-icon");
+  priorityDiv.append(prioritySort, prioritySortIcon);
+
+  todoMeta.append(todoAll, dueDateDiv, priorityDiv);
 
   editBtn.appendChild(editBtnImg);
   titleInsideDiv.append(projectHeader, editBtn);

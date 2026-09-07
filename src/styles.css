@@ -302,6 +302,16 @@ select:focus {
     color: #666;
 }
 
+.sort-div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sort-icon {
+    height: 14px;
+}
+
 .todo-list label {
     margin-left: 10px;
 }
