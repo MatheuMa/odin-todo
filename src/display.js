@@ -8,7 +8,7 @@ const todoDetail = document.querySelector(".todo-detail");
 
 function renderProjects(projects, selectedProject) {
   projectList.replaceChildren();
-  projects.forEach(project => {
+  projects.forEach((project) => {
     const listItem = document.createElement("li");
     const button = document.createElement("button");
     button.textContent = project.title;
@@ -242,7 +242,14 @@ function renderTodo(selectedTodo) {
   deleteBtn.appendChild(deleteSpan);
   todoBtnsDiv.append(saveBtn, deleteBtn);
 
-  todoForm.append(titleDiv, descriptionDiv, dueDiv, priorityDiv, notesDiv, todoBtnsDiv);
+  todoForm.append(
+    titleDiv,
+    descriptionDiv,
+    dueDiv,
+    priorityDiv,
+    notesDiv,
+    todoBtnsDiv,
+  );
   todoDetail.append(detailHeader, todoForm);
 }
 

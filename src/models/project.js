@@ -81,6 +81,6 @@ function compareDates(a, b) {
   if (a.dueDate === b.dueDate) {
     return a.title.localeCompare(b.title);
   } else {
-    return (a.dueDate.localeCompare(b.dueDate));
+    return a.dueDate.localeCompare(b.dueDate);
   }
 }

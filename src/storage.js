@@ -5,7 +5,9 @@ export function loadLocalProjects() {
 
   if (!projectsData) return;
 
-  const projects = JSON.parse(projectsData).map((project) => (Project.fromJSON(project)));
+  const projects = JSON.parse(projectsData).map((project) =>
+    Project.fromJSON(project),
+  );
 
   return projects;
 }

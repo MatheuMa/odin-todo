@@ -98,10 +98,10 @@ function initialize() {
   if (!savedProjects) {
     projects = testProjectList;
     saveProjectsToLocal(projects);
-    console.log("no local storage, a new local storage is created")
+    console.log("no local storage, a new local storage is created");
   } else {
     projects = savedProjects;
-    console.log('local storage loaded')
+    console.log("local storage loaded");
   }
 }
 

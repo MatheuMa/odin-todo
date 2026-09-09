@@ -1,247 +1,247 @@
-@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 button,
 form {
-    border: none;
-    outline: none;
-    font-family: "Roboto", sans-serif;
-    background: none;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  background: none;
+  cursor: pointer;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 :root {
-    --sidebar-width: clamp(250px, 18vw, 350px);
-    --todo-detail-width: clamp(300px, 25vw, 500px);
-    --logo-size: clamp(50px, 4vw, 100px);
-    --common-padding: clamp(20px, 2vh, 40px);
-    --small-padding: clamp(10px, 1vh, 20px);
-    --common-title: clamp(0.8rem, 1.2vw, 1.4rem);
-    --common-gap: clamp(10px, -.8vw, 40px);
-    --delete-red: #cd2727;
-    --common-border: 1px solid #ddd;
+  --sidebar-width: clamp(250px, 18vw, 350px);
+  --todo-detail-width: clamp(300px, 25vw, 500px);
+  --logo-size: clamp(50px, 4vw, 100px);
+  --common-padding: clamp(20px, 2vh, 40px);
+  --small-padding: clamp(10px, 1vh, 20px);
+  --common-title: clamp(0.8rem, 1.2vw, 1.4rem);
+  --common-gap: clamp(10px, -0.8vw, 40px);
+  --delete-red: #cd2727;
+  --common-border: 1px solid #ddd;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 .app {
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    font-family: "Roboto", sans-serif;
-    grid-template-columns: var(--sidebar-width) 1fr 0;
-    overflow: hidden;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+  grid-template-columns: var(--sidebar-width) 1fr 0;
+  overflow: hidden;
 }
 
 .side-bar,
 .todo-list,
 .todo-detail {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 input,
 textarea,
 select {
-    padding: var(--small-padding);
-    font-family: "Roboto", sans-serif;
-    font-size: clamp(1rem, 2vh, 1.3rem);
-    border-radius: 10px;
-    border: 1px solid #aaa;
-    outline: none;
+  padding: var(--small-padding);
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1rem, 2vh, 1.3rem);
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  outline: none;
 }
 
 textarea {
-    height: clamp(4rem, 14vh, 15rem);
-    resize: none;
+  height: clamp(4rem, 14vh, 15rem);
+  resize: none;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid #555;
-    box-shadow: 0 0 4px #555;
+  border: 1px solid #555;
+  box-shadow: 0 0 4px #555;
 }
 
 .app.todo-selected {
-    display: grid;
-    height: 100%;
-    grid-template-columns: var(--sidebar-width) 1fr var(--todo-detail-width);
+  display: grid;
+  height: 100%;
+  grid-template-columns: var(--sidebar-width) 1fr var(--todo-detail-width);
 }
 
 .side-bar,
 .side-bar .projects,
 .side-bar .more-actions {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .side-bar {
-    justify-content: space-between;
-    border-right: var(--common-border);
+  justify-content: space-between;
+  border-right: var(--common-border);
 }
 
 .side-bar .title img {
-    height: var(--logo-size);
+  height: var(--logo-size);
 }
 
 .side-bar .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #333;
-    font-family: "Caesar Dressing", system-ui;
-    padding-block: var(--common-padding);
-    gap: var(--common-gap);
-    font-size: var(--common-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #333;
+  font-family: "Caesar Dressing", system-ui;
+  padding-block: var(--common-padding);
+  gap: var(--common-gap);
+  font-size: var(--common-title);
 }
 
 .side-bar .projects h2 {
-    font-size: 14px;
-    font-weight: 400;
-    color: #555;
-    padding-inline: var(--common-padding);
-    padding-top: var(--common-padding);
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  padding-inline: var(--common-padding);
+  padding-top: var(--common-padding);
 }
 
 .side-bar .projects li button {
-    text-align: left;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 600;
-    padding: var(--common-padding);
+  text-align: left;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  padding: var(--common-padding);
 }
 
 .active {
-    border-left: 5px solid #333;
-    background-color: #ddd;
+  border-left: 5px solid #333;
+  background-color: #ddd;
 }
 
 .side-bar .projects li button:hover,
 .side-bar .more-actions button:hover {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .new-project:hover {
-    border: 2px dashed #333;
-    background-color: #ddd;
+  border: 2px dashed #333;
+  background-color: #ddd;
 }
 
 .side-bar .more-actions button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #555;
-    text-align: left;
-    width: 100%;
-    font-size: 1rem;
-    padding: var(--common-padding);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  padding: var(--common-padding);
 }
 
 .side-bar .more-actions img {
-    height: 1rem;
+  height: 1rem;
 }
 
 .completed label,
 .completed span,
 .completed p {
-    color: #666;
-    text-decoration: line-through;
+  color: #666;
+  text-decoration: line-through;
 }
 
 .new-proj-container {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .new-project {
-    width: 60%;
-    color: #333;
-    border: 1px dashed #333;
-    border-radius: 10px;
-    font-size: 1rem;
-    padding: var(--common-padding);
+  width: 60%;
+  color: #333;
+  border: 1px dashed #333;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: var(--common-padding);
 }
 
 .no-project {
-    text-align: center;
-    margin-top: 40vh;
+  text-align: center;
+  margin-top: 40vh;
 }
 
 .todo-list {
-    display: flex;
-    flex-direction: column;
-    padding: var(--common-padding);
-    padding-inline: clamp(60px, 5vw, 300px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--common-padding);
+  padding-inline: clamp(60px, 5vw, 300px);
 }
 
 .rename-title {
-    margin-bottom: 20px;
-    font-size: clamp(1.2rem, 2.8vh, 1.5rem);
+  margin-bottom: 20px;
+  font-size: clamp(1.2rem, 2.8vh, 1.5rem);
 }
 
 .rename-input {
-    width: clamp(200px, 25vw, 300px);
+  width: clamp(200px, 25vw, 300px);
 }
 
 .rename-buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .edit-project-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 20px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
 
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .editProjectName::backdrop {
-    background-color: rgba(100, 100, 100, 0.7);
+  background-color: rgba(100, 100, 100, 0.7);
 }
 
 .todo-list .todo-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: var(--common-padding);
-    border-bottom: var(--common-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--common-padding);
+  border-bottom: var(--common-border);
 }
 
 .todo-list .todo-title input {
-    font-size: 1.5rem;
-    width: 15rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  width: 15rem;
+  font-weight: 600;
 }
 
-.todo-title>div {
-    display: flex;
-    align-items: end;
-    gap: 10px;
+.todo-title > div {
+  display: flex;
+  align-items: end;
+  gap: 10px;
 }
 
 .todo-title .edit-project {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .todo-list .todo-title .add-todo,
@@ -249,156 +249,156 @@ select:focus {
 .rename-buttons .save-name,
 .todo-list .delete-project,
 .rename-buttons .cancel-rename {
-    font-size: 1rem;
-    padding-inline: 20px;
-    padding-block: 15px;
-    color: white;
-    background-color: #0155da;
-    border-radius: 10px;
+  font-size: 1rem;
+  padding-inline: 20px;
+  padding-block: 15px;
+  color: white;
+  background-color: #0155da;
+  border-radius: 10px;
 }
 
 .todo-list .delete-project {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .todo-btns .delete-btn,
 .todo-list .delete-project,
 .rename-buttons .cancel-rename {
-    border: 2px solid #e53935;
-    color: #e53935;
-    background: none;
+  border: 2px solid #e53935;
+  color: #e53935;
+  background: none;
 }
 
 .todo-btns .delete-btn:hover,
 .todo-list .delete-project:hover,
 .rename-buttons .cancel-rename:hover {
-    color: white;
-    background-color: #e53935;
+  color: white;
+  background-color: #e53935;
 }
 
 .todo-list .todo-meta,
 .todo-items li {
-    display: grid;
-    padding: 25px;
-    grid-template-columns: 10fr 4fr 3fr;
-    border-bottom: var(--common-border);
-    align-items: center;
+  display: grid;
+  padding: 25px;
+  grid-template-columns: 10fr 4fr 3fr;
+  border-bottom: var(--common-border);
+  align-items: center;
 }
 
 .todo-items li:hover {
-    background-color: rgba(200, 200, 200, 0.1);
-    cursor: pointer;
+  background-color: rgba(200, 200, 200, 0.1);
+  cursor: pointer;
 }
 
 .todo-items li span {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .todo-list .todo-meta button,
 .todo-list .todo-meta label {
-    text-align: left;
-    font-size: 1rem;
-    padding-left: 10px;
-    color: #666;
+  text-align: left;
+  font-size: 1rem;
+  padding-left: 10px;
+  color: #666;
 }
 
 .sort-div {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .sort-icon {
-    height: 14px;
+  height: 14px;
 }
 
 .todo-list label {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .todo-all {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .priority {
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 16px;
-    border-radius: 999px;
-    border: 1px solid currentColor;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
 }
 
 .priority::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: currentColor;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
 }
 
 .priority-high {
-    color: #e53935;
-    background-color: #ffebee;
+  color: #e53935;
+  background-color: #ffebee;
 }
 
 .priority-medium {
-    color: #f57c00;
-    background-color: #fff3e0;
+  color: #f57c00;
+  background-color: #fff3e0;
 }
 
 .priority-low {
-    color: #2eae5e;
-    background-color: #e9f7ee;
+  color: #2eae5e;
+  background-color: #e9f7ee;
 }
 
 .todo-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    border-left: var(--common-border);
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-left: var(--common-border);
+  padding: 20px;
 }
 
 .todo-detail .detail-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .todo-detail .detail-header h2 {
-    font-size: clamp(1rem, 3vh, 1.8rem);
+  font-size: clamp(1rem, 3vh, 1.8rem);
 }
 
 .todo-detail .todo-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 0;
 }
 
-.todo-form>div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.todo-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .todo-form label {
-    font-size: clamp(1rem, 2vh, 1.3rem);
+  font-size: clamp(1rem, 2vh, 1.3rem);
 }
 
 .todo-form {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .todo-form .todo-btns {
-    flex-direction: row;
-    justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .detail-header img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
